@@ -23,12 +23,29 @@ horafin = demoras[columns[2]]
 duracion = demoras[columns[4]]
 subconcepto = demoras[columns[6]]
 
+
+# Lista de refilados
 refilado = []
 
-refilado.append(0)
-refilado.append(0.5)
-print(refilado)
+for i in range(1, len(produccion)):
+    if materialrefilado[i] == 0:
+        refilado.append(False)
+    else:
+            refilado.append(True)
 
+
+# Lista de cambios de ancho
+cambiodeancho = []
+for i in range(1,len(produccion)-1):
+    if ancho[i+1] == ancho[i]:
+        cambiodeancho.append(False)
+    else:
+        cambiodeancho.append(True)
+
+
+
+print(ancho)
+print(cambiodeancho)
 
 #print(demoras.head(3)) IMPRIME ENCABEZADO CON PRIMERAS 3 BOBINAS DE LISTA DE DEMORAS
 #print(produccion.head(3)) IMPRIME ENCABEZADO CON PRIMERAS 3 BOBINAS
