@@ -10,7 +10,7 @@ def print_full(x):
 
 #IMPORTACION DE BASE DE DATOS
 date = "31-07-2019"
-demoras = read_excel(date +' - Demoras.xls')
+demoras = read_excel(date +' - Demoras.xlsx')
 demoras.set_index('Bobina')
 produccion = read_excel(date +'.xlsx')
 produccion.set_index('Bobina')
@@ -44,5 +44,7 @@ for i in range(1, len(produccion)):
                         count = 1
                 else:
                         count = count+1
-                
+
+print_full(produccion)
+print_full(demoras)                
 print(lotes)
