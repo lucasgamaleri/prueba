@@ -11,8 +11,8 @@ def print_full(x):
 #IMPORTACION DE BASE DE DATOS
 demoras = input('Archivo de datos de demoras >> ')
 produccion = input('Archivo de datos de produccion >> ')
-#date = "31-07-2019"
 
+#date = "31-07-2019"
 #demoras = read_excel(date +' - Demoras.xlsx')
 #demoras.set_index('Bobina')
 #produccion = read_excel(date +'.xlsx')
@@ -58,9 +58,11 @@ for i in range(1, len(produccion)):
                         count = 1
                 else:
                         count = count+1
-print(produccion)
-print(demoras.Duracion)
 
+demoras = {'Bobina': demoras.Bobina, 'Duracion de la demora': demoras.Duracion }
+demoras = pd.DataFrame(data=demoras)
+print(demoras)
+print('\n \n')
 result = {'Fecha Produccion': fecha, 'Dimension': dimension,'Cantidad de bobinas en el lote': lotes, 'Refilado': refil, 'Producto': producto}
 result = pd.DataFrame(data=result)
 print(result)
